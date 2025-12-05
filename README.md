@@ -12,7 +12,7 @@ Esta função analisa o relatório XML para identificar reservas Checked In que 
 
 Como extrair o relatório no Opera Cloud:
 
-Vá em Reports e busque pelo Report Name: GIH01128.
+Vá em Reports e busque pelo Report Name: GIH01128. (Guest In House Check)
 
 Clique em Edit Report Parameters.
 
@@ -62,3 +62,6 @@ Preço de Layover: O valor da tarifa de referência deve ser ajustado diretament
 
 
 **Irei deixar relatórios XML e CSV de exemplos**
+
+Giratecheck -- Relatório GIH 
+Pagina1/2 -- Relatório CSV

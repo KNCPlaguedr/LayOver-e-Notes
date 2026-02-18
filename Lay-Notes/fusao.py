@@ -7,9 +7,8 @@ from collections import defaultdict
 import os
 from datetime import datetime
 
-#==============================================================================
-# CLASSE 1: LÓGICA E INTERFACE DO VALIDADOR DE RATES (mail.py)
-#==============================================================================
+# CLASSE 1: LÓGICA E INTERFACE DO VALIDADOR DE RATES
+
 class RateValidatorApp:
     def __init__(self, parent_frame):
         self.parent = parent_frame
@@ -261,9 +260,9 @@ class RateValidatorApp:
             txt_incorretos.config(state='disabled')
 
 
-#==============================================================================
-# CLASSE 2: LÓGICA E INTERFACE DO VERIFICADOR XML (GIH.py)
-#==============================================================================
+
+# CLASSE 2: LÓGICA E INTERFACE DO VERIFICADOR XML/GIH
+
 class XmlCheckerApp:
     def __init__(self, parent_frame):
         self.parent = parent_frame
@@ -305,7 +304,6 @@ class XmlCheckerApp:
         tab_rates.grid_rowconfigure(1, weight=1)
         
         self.txt_sem_notes = self._create_text_box(tab_rates, "SEM notes (Para checar)", 0, 0, "primary")
-        # --- LÓGICA ALTERADA AQUI (LABEL) ---
         self.txt_divergentes = self._create_text_box(tab_rates, "Notes divergentes (Falta TRF)", 0, 1, "primary")
         self.txt_fantasmas = self._create_text_box(tab_rates, "Fantasmas (Na sua lista, mas não no XML)", 1, 0, "primary")
         self.txt_sem_checar = self._create_text_box(tab_rates, "Sem Checar (No XML, mas não na sua lista)", 1, 1, "primary")
@@ -410,7 +408,6 @@ class XmlCheckerApp:
                 if not all_comments.strip():
                     quartos_sem_comentarios.append(room)
                 
-                # --- LÓGICA ALTERADA AQUI ---
                 if rate != "LAY":
                     if "TRF" not in all_comments:
                         divergentes.append(room)
@@ -452,7 +449,7 @@ class XmlCheckerApp:
 class MainApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Ferramentas de Análise de Reservas v1.7") # Versão incrementada
+        self.root.title("Análise de Reservas")
         self.root.geometry("950x650")
 
         main_notebook = tb.Notebook(self.root)
@@ -470,4 +467,5 @@ class MainApp:
 if __name__ == "__main__":
     app = tb.Window(themename="darkly")
     main_app = MainApp(app)
+
     app.mainloop()
